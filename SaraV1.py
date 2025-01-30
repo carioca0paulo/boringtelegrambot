@@ -3,7 +3,7 @@ import requests
 from datetime import datetime
 
 # Initialize the bot with your Telegram bot token
-bot = telebot.TeleBot('7615482628:AAFJJylYvg_NDTPFcsw8wxNDJuQjGpSbiu4')
+bot = telebot.TeleBot('YOUR-TELEGRAM-BOT-TOKEN')
 
 # Command to start the bot
 @bot.message_handler(commands=['start'])
@@ -24,7 +24,7 @@ def send_info(message):
     usdt_price = response['tether']['brl']
 
     # Get local news from Baixada Fluminense
-    news_url = 'https://newsapi.org/v2/everything?q=Baixada%20Fluminense&apiKey=c403f51b14f546fb873070911f675ce2'
+    news_url = 'https://newsapi.org/v2/everything?q=Baixada%20Fluminense&apiKey=YOUR-NEWSAPI-KEY'
     news_response = requests.get(news_url).json()
     articles = news_response['articles'][:5]
     news_message = ''
